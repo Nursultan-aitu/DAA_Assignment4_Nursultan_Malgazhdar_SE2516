@@ -141,11 +141,11 @@ def main():
     )
     draw_plot(
         "search_comparisons.png", "Repeated near-matches expose Naive search",
-        "Pattern length is n / 64. KMP comparisons include both LPS construction and the search.",
+        "Pattern length is n / 64. Counts include LPS. The random curves nearly overlap.",
         "Text length n (characters, log scale)", "Character comparisons per search (log scale)",
         [(label, count_series(groups, name, input_type, ["search_comparisons", "lps_comparisons"]), dashed)
          for label, name, input_type, dashed in [
-             ("Naive · random", "naive", "random_planted", True),
+             ("Naive · random", "naive", "random_planted", False),
              ("Naive · late mismatch", "naive", "late_mismatch", False),
              ("KMP · random", "kmp", "random_planted", True),
              ("KMP · late mismatch", "kmp", "late_mismatch", False),
